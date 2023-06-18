@@ -5,7 +5,15 @@
 
 2.  [Timeline](https://github.com/ThomasHODonnell/A.I.DroneM1.0#Timeline)
 
-3.  [Notes](https://github.com/ThomasHODonnell/A.I.DroneM1.0#Notes)
+3.  [Functionality](https://github.com/ThomasHODonnell/A.I.DroneM1.0#Functionality)
+
+4.  [Components](https://github.com/ThomasHODonnell/A.I.DroneM1.0#Components)
+
+5. [To-do](https://github.com/ThomasHODonnell/A.I.DroneM1.0#To-do)
+
+6.  [Notes](https://github.com/ThomasHODonnell/A.I.DroneM1.0#Notes)
+
+7. [References](https://github.com/ThomasHODonnell/A.I.DroneM1.0#References)
 
 
 ## **Summary** 
@@ -48,6 +56,38 @@
   - September 14, 2023 (LSU Career Expo)
 
 
+## **Functionality**
+1. boot to a stable state
+   1. main power board is operational 
+   2. needs to be able to read a program
+      1. ideally python, then C++ 
+2. able to hover in place
+   1. need to build ERC board 
+   2. connect ERC to motors   
+3. create flight prog
+   1. create GPS/INS (inertial measurement system)
+   2. use chip to design flight program via ext. remote. 
+4. Integrate progs 
+   1. remove ext remote; integrate with python AI. 
+      1. need to let AI and  INS chip commuinicate 
+      2. will need to program aviodance commands via function(dist.)
+      3. apple measurement app 
+
+
+
+## **Components**
+- CPU + accompaning 
+- power reg, learn about maxis battery  
+- USB
+
+## **To-do**
+1. build a SBC (main power board)
+   - SBC to run python code
+   -  will need channels for dual communication between INS and ERC boards
+   -  some cold storage to hold one or more programs
+      -  in M1.0; create physical output to read program output. 
+
+
 
 ## **Notes**
 - *Terms / Concepts I need to learn and research how they need to be integrated in this project.*
@@ -66,6 +106,7 @@
   - Main Processing Core Board 
 
 
+
 ### Firmware
 - **EDA** (Electrnic Design Automation) is software and hardware that assist the design process of semiconductor devices or chips => MCU / MPU 
   - used to design and verify the manufacuring process => meets performance needs => monitor performance
@@ -80,9 +121,24 @@
   - *Design* 
     - Set up the Pinouts based on PCB Design 
 
+
+
+
 ### CS
 - OS
   - Open Source Linux Distribution
   - Designed to simply run a terminal where a remote will send predefined commands. 
     - *Source* => 
 - Deep Learning Algorithm(s)
+
+
+## **References**
+
+### EE
+- https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#schematics-and-mechanical-drawings (rasp sch)
+ 
+### Firmware
+- https://github.com/raspberrypi (OS + Assembly)
+### CS
+- https://www.mathworks.com/help/nav/ug/model-imu-gps-and-insgps.html  (INS prog)
+
