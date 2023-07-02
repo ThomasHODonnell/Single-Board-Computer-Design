@@ -76,16 +76,25 @@
 
 
 ## **Components**
-- CPU + accompaning 
+- MPU
+  - https://www.st.com/en/microcontrollers-microprocessors/stm32mp153d.html 
+- Additional DRAM (SDRAM)
+  - 
 - power reg, learn about maxis battery  
 - USB
 
 ## **To-do**
-1. build a SBC (main power board)
+1. *build a SBC* (main power board)
    - SBC to run python code
    -  will need channels for dual communication between INS and ERC boards
-   -  some cold storage to hold one or more programs
-      -  in M1.0; create physical output to read program output. 
+   -  in M1.0; create physical output to read program output.
+-  SBC Comps: 
+   -  flash storage chip (large enough for OS + prog(s))
+      -  flash the Raspbian OS?
+      -  sd card?
+      -  
+   -  will likely need RAM (DDR4 chip)
+2. Learn how to integrate Debian Linux 
 
 
 
@@ -127,18 +136,36 @@
 ### CS
 - OS
   - Open Source Linux Distribution
+    - Debian Server,  SUSE Linux, Free rtos
+    - flight sys prog interacts with neural network client 
   - Designed to simply run a terminal where a remote will send predefined commands. 
     - *Source* => 
 - Deep Learning Algorithm(s)
+  - memory will vary, find out a relative RAM size, may need additional 
+- Flight System 
+  - Verilog State Machine?
 
 
 ## **References**
 
+### General
+- https://microchipdeveloper.com/32mpu:harmony3-diff-mcu-mpu 
+- https://stm32ai.st.com/ (on-chip NN sensors)
+
 ### EE
 - https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#schematics-and-mechanical-drawings (rasp sch)
+- https://www.st.com/en/microcontrollers-microprocessors/stm32mp153d.html (MPU)
+  - MPU Datasheets can be found here ... 
+  - https://www.csselectronics.com/pages/can-fd-flexible-data-rate-intro (CAN-FD)
  
 ### Firmware
 - https://github.com/raspberrypi (OS + Assembly)
 ### CS
 - https://www.mathworks.com/help/nav/ug/model-imu-gps-and-insgps.html  (INS prog)
+- (https://stm32ai.st.com/ai-for-linux/) (StLinux - AI)
+- https://wiki.st.com/stm32mpu/wiki/X-LINUX-AI_OpenSTLinux_Expansion_Package (OS Docs)
+
+
+### Datasheets (downloadable; personal notes for reference)
+- https://www.st.com/resource/en/datasheet/stm32mp153d.pdf (MAIN DS)
 
