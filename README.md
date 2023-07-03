@@ -23,7 +23,7 @@
 - **I will design my own PCBs** and exchange them for the boards provided with the product. 
   - PCBs will be designed to fit the dimensions, I/O, and performance needs of the Maxis Mini I. 
 - **I will create my own firmware.** The firmware will be created such that the drone can run programs in python. 
-  - I will not be creating my own compiler. 
+  - I will not be creating my own compiler or Operating System. 
   - The open source python compiler can be found here: 
     - *Source* =>
 - **I will design a neural network(s)** to provide application for the drone. 
@@ -35,18 +35,19 @@
     - Analog Circuit Devices
       - RLC, Transistors, Diodes
       - MOSFET, FPGA
-    - Microprocessors / Microcontrollers
+    - Digital Electronic Devices
+      - Microprocessors / Microcontrollers / IC's
     - PCB Design and Implementation using **KiCad** 
       - Design
-      - Simulation
+      - Simulation (LTSpice)
       - Verification
 
   - **Computer Science**
     - Assembly Language 
       - Bill of Materials (BOM)
       - Footprint Position File
-    - Operating System?
-    - Machine Learning 
+    - Operating System
+    - Machine Learning (TensorFlow)
       - Deep Learning
       - Neural Networks
 
@@ -54,13 +55,14 @@
 ##  **Timeline**
 - M1.0 Final Due Date 
   - September 14, 2023 (LSU Career Expo)
+- SBC Due Date
+  - July 31, 2023
 
 
 ## **Functionality**
 1. boot to a stable state
    1. main power board is operational 
-   2. needs to be able to read a program
-      1. ideally python, then C++ 
+   2. needs to be able to read python code (TF is built into OS)
 2. able to hover in place
    1. need to build ERC board 
    2. connect ERC to motors   
@@ -75,27 +77,28 @@
 
 
 
-## **Components**
+## **Components (see DS in folder)**
 - MPU
-  - https://www.st.com/en/microcontrollers-microprocessors/stm32mp153d.html 
-- Additional DRAM (SDRAM)
-  - 
-- power reg, learn about maxis battery  
-- USB
+  - STM32MP135DAD1
+- Power Management IC
+  - STMIC1BPQR
+- Battery Level Gauge
+  - STC3115ITJ
+- RAM
+  - undecided
+- EMMC
+  - undecided
+- USB-C Receptacle 
+  - undecided
+- SD Card Receptacle
+  - undecided
 
 ## **To-do**
-1. *build a SBC* (main power board)
+1. *finish a SBC* (main power board)
    - SBC to run python code
-   -  will need channels for dual communication between INS and ERC boards
-   -  in M1.0; create physical output to read program output.
--  SBC Comps: 
-   -  flash storage chip (large enough for OS + prog(s))
-      -  flash the Raspbian OS?
-      -  sd card?
-      -  
-   -  will likely need RAM (DDR4 chip)
-2. Learn how to integrate Debian Linux 
-
+   -  will need channels for dual communication between INS and ERC boards (sodder pads)
+2. *Gather Data for NN*
+   - live data feeds to train convergence on, select initial terrain. 
 
 
 ## **Notes**
@@ -112,7 +115,7 @@
       - accelerometer 
     - covers gravitational acceleration, rotational velocity, tempature
     - used in sync with MCU
-  - Main Processing Core Board 
+  - Main Power Board (SBC)
 
 
 
@@ -121,12 +124,12 @@
   - used to design and verify the manufacuring process => meets performance needs => monitor performance
   
 
-- **STM** - an EDA software enviornment
+- **STM** - an EDA software enviornment (will finish schematic before ARM prog.)
   - *setup*
-    - select the chip that meets needs
     - select firmware package 
-    - C/C++ as targeted language
+    - C++ as targeted language
     - STM generates code template
+    - write ARM prog. for MPU + Batt Gauge.
   - *Design* 
     - Set up the Pinouts based on PCB Design 
 
@@ -136,14 +139,14 @@
 ### CS
 - OS
   - Open Source Linux Distribution
-    - Debian Server,  SUSE Linux, Free rtos
-    - flight sys prog interacts with neural network client 
+    - flight sys prog interacts with neural network clients
   - Designed to simply run a terminal where a remote will send predefined commands. 
-    - *Source* => 
+    - *X-Linux-AI* => 
 - Deep Learning Algorithm(s)
-  - memory will vary, find out a relative RAM size, may need additional 
-- Flight System 
-  - Verilog State Machine?
+  - make appx for RAM needed. 
+  - Flight System
+  - Object Recognition  
+
 
 
 ## **References**
