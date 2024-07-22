@@ -1,4 +1,4 @@
-# A.I. Drone M1.0
+# Single Board Computer Design - sub-project of Computer Vision Drone
 
 ## **Table of Contents** 
 1.  [Summary](https://github.com/ThomasHODonnell/A.I.DroneM1.0#Summary)
